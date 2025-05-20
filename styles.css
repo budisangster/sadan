@@ -1919,29 +1919,21 @@ body.loading {
 .gallery-nav.next { right: 20px; }
 
 .gallery-info {
-    padding: 15px 25px 25px;
+    padding: 15px 25px;
     background: var(--card-bg);
-    overflow-y: auto;
-    max-height: 200px;
+    text-align: center;
 }
 
 .gallery-description {
     color: var(--text-secondary);
     font-size: 0.95rem;
     line-height: 1.6;
-    margin-bottom: 20px;
+    margin: 0;
     text-align: center;
 }
 
 .gallery-thumbnails {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
-    gap: 10px;
-    padding: 15px;
-    background: var(--bg-secondary);
-    border-radius: 10px;
-    max-width: 800px;
-    margin: 0 auto;
+    display: none; /* Hide bottom thumbnails since we have the sidebar */
 }
 
 .gallery-thumbnail {

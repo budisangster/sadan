@@ -563,23 +563,8 @@ const initGallery = () => {
             });
         });
 
-        // Update bottom thumbnails
-        thumbnailsContainer.innerHTML = data.images.map((src, index) => `
-            <div class="gallery-thumbnail ${index === currentImageIndex ? 'active' : ''}" 
-                 data-index="${index}">
-                <img src="${src}" alt="Thumbnail ${index + 1}">
-            </div>
-        `).join('');
-
-        // Add click handlers to thumbnails
-        thumbnailsContainer.querySelectorAll('.gallery-thumbnail').forEach(thumb => {
-            thumb.addEventListener('click', () => {
-                const newIndex = parseInt(thumb.dataset.index);
-                if (newIndex === currentImageIndex) return;
-                currentImageIndex = newIndex;
-                updateGallery();
-            });
-        });
+        // Update bottom thumbnails (simplified since they're now hidden by CSS)
+        thumbnailsContainer.innerHTML = '';
     };
 
     // ===== EVENT LISTENERS =====

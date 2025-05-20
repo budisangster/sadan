@@ -478,6 +478,12 @@ const initGallery = () => {
         // Set the active images from the All subcategory
         galleryData[currentProject].images = [...galleryData[currentProject].subcategories['All']];
         
+        // Hide the main navbar
+        const navbar = document.querySelector('nav');
+        if (navbar) {
+            navbar.style.display = 'none';
+        }
+        
         modal.classList.add('active');
         document.body.style.overflow = 'hidden';
         
@@ -494,6 +500,13 @@ const initGallery = () => {
     const closeGallery = () => {
         modal.classList.remove('active');
         document.body.style.overflow = '';
+        
+        // Show the main navbar again
+        const navbar = document.querySelector('nav');
+        if (navbar) {
+            navbar.style.display = '';
+        }
+        
         currentProject = null;
         currentImageIndex = 0;
         currentSubcategory = 'All';
